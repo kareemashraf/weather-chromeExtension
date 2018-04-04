@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #33C4FF;
+    background-color: #000000;
 }
 
 
@@ -24,6 +24,7 @@ body {
     line-height: 1.5;
     text-align: center;
 }
+
 a {
     color: #6D8CA0;
     font-weight: 700;
@@ -163,7 +164,10 @@ nav {
     font-size: 2em;
     font-weight: 700;
     margin: 0;
-    z-index: 99999999;
+    width: 325px;
+}
+#toggle{
+    float: left;
 }
 .date {
     font-size: 1em;
@@ -192,39 +196,27 @@ nav {
     Future Forecast
 -----------------*/
 #future {
-    /*margin-bottom: 10%;*/
-    padding: 0 10%;
-}
-#future > .container {
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-    margin: 0;
-    padding: 5% 10%;
-    width: 100%;
-}
-#future > .container:first-child {
-    border-top: 1px solid rgba(255,255,255,0.25);
-}
-#future .day {
-    padding: 0;
-    text-align: left;
-    text-transform: uppercase;
-}
-#future .weatherIcon {
-    float: right;
-    font-size: 0.5em;
-    height: 50px;
-    margin-left: 10%;
-    margin-top: -5%;
-    width: 50px;
-}
-#future p { text-align: left; }
-.high:after, .low:after {
-    content: '\00b0';
-    padding: 1px;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
 }
 
-/*----------------
-    Media Queries
------------------*/
+#future .container1 {
+    float: left;
+    margin-left: 10%;
+}
+
+#future .container2 {
+    float: right;
+    margin-right: 10%;
+}
+
+.vl {
+    float: left;
+    margin-left: 18%;
+    margin-top: 5%;
+    border-left: 2px solid white;
+    height: 50%;
+}
 
 

@@ -14,28 +14,33 @@
 	<script src="js/bootstrap-toggle.min.js"></script>
 </head>
 <body>
-	<!-- Status Bar -->
-	<div id="status">
-		<input type="checkbox" checked data-toggle="toggle">
-	</div>
 	<!-- Current Weather -->
 	<div id="current" class="wrapper">
-		<nav>
+		<nav id="toggle">
 			<input type="checkbox" checked data-toggle="toggle" data-on="C" data-off="F" data-size="mini">
 		</nav>
-		<h1 class="location">Chicago, IL</h1>
-		<h2 class="date">Sunday, January 1, 2017</h2>
+		<h1 class="location"></h1>
+		<h2 class="date"></h2>
 		<div class="weatherIcon">
-			<div class="sunny">
-				<div class="inner"></div>
-			</div>
+				<div class="inner"><img id="img" src=""></div>
 		</div>
-		<p class="temp">72</p>
-		<p class="conditions">Sunny</p>
+		<p class="temp"></p>
+		<p class="conditions"></p>
 	</div>
 	<!-- Future Forecast -->
 	<div id="future" class="wrapper">
-		<div class="container">
+		<div class="container1">
+			<h3 class="day">Mon</h3>
+			<div class="weatherIcon">
+				<div class="partlycloudy">
+					<div class="inner"></div>
+				</div>
+			</div>
+			<p class="conditions">Partly Cloudy</p>
+			<p class="tempRange"><span class="high">64</span> | <span class="low">48</span></p>
+		</div>
+		<div class="vl"></div>
+		<div class="container2">
 			<h3 class="day">Mon</h3>
 			<div class="weatherIcon">
 				<div class="partlycloudy">

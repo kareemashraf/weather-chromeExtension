@@ -1,7 +1,11 @@
 $(document).ready(function () {
-	
-	fetchdata();
 
+    setTimeout(function(){
+        fetchdata();
+    	}, 100);
+
+	// fetchdata();
+	// console.log(getApi().query.results.channel.item.condition.temp);
 });
 
 function getdata(){
@@ -18,7 +22,9 @@ function getApi(){
 	var xhr = new XMLHttpRequest();
 		var query = "https://query.yahooapis.com/v1/public/yql?q=";
 		var unite = 'c';
-		xhr.open("GET", query+"select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+getdata().city+"')and u='"+unite+"' &format=json ", false);
+		var uri = query+"select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+getdata().city+"')and u='"+unite+"' &format=json ";
+
+		xhr.open("GET", uri, false);
 		xhr.send();
 		// console.log(xhr.response);
 		return JSON.parse(xhr.response);
@@ -26,6 +32,7 @@ function getApi(){
 
 function fetchdata(){
 	//convert getdata() obj to array
+
 	var array = $.map(getdata(), function(value, index) {
     		return [value];
 		});
@@ -34,7 +41,21 @@ function fetchdata(){
 		console.log(array[i]);
 	}
 
-	$('#current .location').text(getdata().city);
+    var condition = getApi().query.results.channel.item.condition.text
+	var img = condition.replace(" ","_");
+
+        $('#current .location').text(getdata().city);
+	$('#current .temp').text(getApi().query.results.channel.item.condition.temp);
+	$('#current .conditions').text(condition);
+	$('#current .date').text(getApi().query.results.channel.item.forecast[0].day+" "+getApi().query.results.channel.item.forecast[0].date);
+
+	if (img.toLowerCase() == 'mostly_cloudy'){
+        img.toLowerCase() == 'partly_cloudy'; //because google gstatic API doesnt have this image :(
+	}
+
+    $("#img").attr("src",'https://ssl.gstatic.com/onebox/weather/128/'+img.toLowerCase()+'.png');
+
+
 }
 
 
