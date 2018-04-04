@@ -41,21 +41,24 @@ function fetchdata(){
 		console.log(array[i]);
 	}
 
-    var condition = getApi().query.results.channel.item.condition.text
-	var img = condition.replace(" ","_");
-
-        $('#current .location').text(getdata().city);
-	$('#current .temp').text(getApi().query.results.channel.item.condition.temp);
-	$('#current .conditions').text(condition);
-	$('#current .date').text(getApi().query.results.channel.item.forecast[0].day+" "+getApi().query.results.channel.item.forecast[0].date);
-
-	if (img.toLowerCase() == 'mostly_cloudy'){
-        img.toLowerCase() == 'partly_cloudy'; //because google gstatic API doesnt have this image :(
+    var condition = getApi().query.results.channel.item.condition;
+    var hr = (new Date()).getHours();
+    console.log(hr);
+    if(hr <= '19' && hr >= '3'){
+    	var time = 'd';
+	}else{
+    	var time = 'n';
 	}
 
-    $("#img").attr("src",'https://ssl.gstatic.com/onebox/weather/128/'+img.toLowerCase()+'.png');
+        $('#current .location').text(getdata().city);
+	$('#current .temp').text(condition.temp);
+	$('#current .conditions').text(condition.text);
+	$('#current .date').text(getApi().query.results.channel.item.forecast[0].day+" "+getApi().query.results.channel.item.forecast[0].date);
 
 
+    $("#img").attr("src",'https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/'+condition.code+time+'.png');
+
+console.log('https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/'+condition.code+time+'.png');
 }
 
 
