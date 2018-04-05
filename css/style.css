@@ -5,15 +5,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+   /* background-color: #000000;*/
 }
 
 
 html, body {
-    height: 100%;
+    /*height: 100%;*/
     width: 100%;
     min-width:400px;
-    /*overflow: hidden;*/
+    overflow: hidden;
+    background: transparent;
+
 }
 body {
     color: #fff;
@@ -23,6 +25,7 @@ body {
     letter-spacing: 0.05rem;
     line-height: 1.5;
     text-align: center;
+    background-color: #000000 !important;
 }
 
 a {
@@ -222,4 +225,43 @@ nav {
 #img{
     margin-left: -30%;
 }
+
+
+#video-cloud{
+    width: 100%;
+}
+
+#bg-video{
+   position: fixed; 
+   top: 0; 
+   width: 100%; 
+   height: 100%; 
+   z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -23,7 +23,7 @@ function getApi(){
 		var query = "https://query.yahooapis.com/v1/public/yql?q=";
 		var unite = 'c';
 		var uri = query+"select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+getdata().city+"')and u='"+unite+"' &format=json ";
-
+console.log(uri);
 		xhr.open("GET", uri, false);
 		xhr.send();
 		// console.log(xhr.response);
