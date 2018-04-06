@@ -12,18 +12,21 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<script src="js/bootstrap-toggle.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 </head>
 <body>
 	<!-- Current Weather -->
 	<!-- cloud -->
 		<div id="bg-video">
-				<video id="video-cloud" poster="http://countdownspack.artrow.net/pack/epicvideo/poster.jpg" autoplay="autoplay" src="http://countdownspack.artrow.net/pack/epic/video/video.webm" ></video>
+				<video id="video-cloud" autoplay="autoplay" loop src="http://countdownspack.artrow.net/pack/epic/video/video.webm" ></video>
+				<img id="cloud-line" src="http://countdownspack.artrow.net/pack/clouds/images/parallax-front-layer-clouds.png">
 		</div>
 		<!-- end video -->
 	<div id="current" class="wrapper">
-		<nav id="toggle">
+		<!-- <nav id="toggle">
 			<input type="checkbox" checked data-toggle="toggle" data-on="C" data-off="F" data-size="mini">
-		</nav>
+		</nav> -->
 		<h1 class="location"></h1>
 		<h2 class="date"></h2>
 		<div class="weatherIcon">
@@ -31,31 +34,67 @@
 		</div>
 		<p class="temp"></p>
 		<p class="conditions"></p>
+		<p class="humid"></p>
+		<p class="wind"></p>
 	</div>
 	<!-- Future Forecast -->
 	<div id="future" class="wrapper">
 		<div class="container1">
-			<h3 class="day">Mon</h3>
+			<h3 class="day"></h3>
 			<div class="weatherIcon">
 				<div class="partlycloudy">
 					<div class="inner"></div>
 				</div>
 			</div>
-			<p class="conditions">Partly Cloudy</p>
-			<p class="tempRange"><span class="high">64</span> | <span class="low">48</span></p>
+			<p class="conditions"></p>
+			<p class="tempRange"><span class="high"></span>  ..  <span class="low"></span></p>
 		</div>
-		<div class="vl"></div>
+		<div class="line"></div>
 		<div class="container2">
-			<h3 class="day">Mon</h3>
+			<h3 class="day"></h3>
 			<div class="weatherIcon">
 				<div class="partlycloudy">
 					<div class="inner"></div>
 				</div>
 			</div>
-			<p class="conditions">Partly Cloudy</p>
-			<p class="tempRange"><span class="high">64</span> | <span class="low">48</span></p>
+			<p class="conditions"></p>
+			<p class="tempRange"><span class="high"></span>  ..  <span class="low"></span></p>
 		</div>
+
+			<div class="donate">
+				<form id="donate-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="T52NVNQCEYCAY">
+				<table>
+				<tr>
+					<td>
+						<input type="hidden" name="on0"  value="your Donation will give us Huge support!">you like it? you can buy us Coffe!  .
+					</td>
+					
+					<td>
+						<select class="form-control" name="os0" style="width: 100px;">
+							<option value="1"> &euro;1 EUR</option>
+							<option value="5"> &euro;5 EUR</option>
+							<option value="10"> &euro;10 EUR</option>
+							<option value="20"> &euro;20 EUR</option>
+							<option value="50"> &euro;50 EUR</option>
+							<option value="100"> &euro;100 EUR</option>
+						</select> 
+					</td>
+					<td>
+				<input type="hidden" name="currency_code" value="EUR">
+	<input id="btn-form-donate" type="image" src="https://www.widernet.org/sites/default/files/images/DonateButton.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="width: 50px;">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</td>
+				</tr>
+				</table>
+				
+				</form>
+			</div>
+
+
 	</div>
+	
 		<!-- <div class="container">
 			<h3 class="day">Tue</h3>
 			<div class="weatherIcon">
