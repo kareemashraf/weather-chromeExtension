@@ -1,17 +1,24 @@
 $(document).ready(function () {
 
-    setTimeout(function(){
-        // fetchdata();
-        getApi();
-    	}, 100);
-
-$('#donate-form').on('submit',function(e) { 
- window.open('e', 'name'); 
+init();
+    	
 
 });
-	// fetchdata();
-	// console.log(getApi().query.results.channel.item.condition.temp);
-});
+
+function init(){
+
+	setTimeout(function(){
+
+	    	if (getdata().city) {
+	    		$("#loader").toggleClass('hidden');
+	    		getApi();
+	    		console.log('start!');
+	    	}else{
+	    		init();
+	    		console.log('loading data!');
+	    	}
+    	}, 2000);
+}
 
 function getdata(){
 	var xhr = new XMLHttpRequest();
@@ -53,22 +60,23 @@ console.log(uri);
 
     $('#current .location').text(getdata().city);
 	$('#current .temp').text(condition.temp);
+	$('#current .temp').toggleClass('degree-sign-c');
 	$('#current .conditions').text(condition.text);
 	$('#current .date').text(data.query.results.channel.item.forecast[0].day+" "+data.query.results.channel.item.forecast[0].date);
-	$('.humid').text("humidity: "+data.query.results.channel.atmosphere.humidity+"%");
+	$('.humid').text("Humidity: "+data.query.results.channel.atmosphere.humidity+"%");
 	$('.wind').text("Wind: "+data.query.results.channel.wind.speed+" km/h");
 
 	$('.container1 .day').text(data.query.results.channel.item.forecast[1].day);
 	$('.container1 .conditions').text(data.query.results.channel.item.forecast[1].text);
-	$('.container1 .high').text(data.query.results.channel.item.forecast[1].high);
-	$('.container1 .low').text(data.query.results.channel.item.forecast[1].low);
+	$('.container1 .high').text('High: '+data.query.results.channel.item.forecast[1].high);
+	$('.container1 .low').text('& Low: '+data.query.results.channel.item.forecast[1].low);
 
 	$('.line').addClass('vl');
 
 	$('.container2 .day').text(data.query.results.channel.item.forecast[2].day);
 	$('.container2 .conditions').text(data.query.results.channel.item.forecast[2].text);
-	$('.container2 .high').text(data.query.results.channel.item.forecast[2].high);
-	$('.container2 .low').text(data.query.results.channel.item.forecast[2].low);
+	$('.container2 .high').text('High: '+data.query.results.channel.item.forecast[2].high);
+	$('.container2 .low').text('& Low: '+data.query.results.channel.item.forecast[2].low);
 
 
     $("#img").attr("src",'https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/'+condition.code+time+'.png');

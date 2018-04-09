@@ -30,6 +30,10 @@ body {
     background-color: #000000 !important;
 }
 
+.location{
+    margin-top: 0px;
+}
+
 a {
     color: #6D8CA0;
     font-weight: 700;
@@ -165,10 +169,11 @@ nav {
     padding: 3% 5% ;
     padding-bottom: 0;
     position: relative;
-    margin-top: 10%;
+    /*margin-top: 10%;*/
 }
 .location {
-    font: 52px 'Amatic SC', cursive;
+    color: black;
+    /*font: 52px 'Amatic SC', cursive;*/
     text-shadow: rgb(204, 204, 204) 0px 1px 0px, rgb(201, 201, 201) 0px 2px 0px, rgb(187, 187, 187) 0px 3px 0px, rgb(185, 185, 185) 0px 4px 0px, rgb(170, 170, 170) 0px 5px 0px, rgba(0, 0, 0, 0.098) 0px 6px 1px, rgba(0, 0, 0, 0.098) 0px 0px 5px, rgba(0, 0, 0, 0.298) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 3px 5px, rgba(0, 0, 0, 0.247) 0px 5px 10px, rgba(0, 0, 0, 0.2) 0px 10px 10px, rgba(0, 0, 0, 0.15) 0px 20px 20px;
 }
 #toggle{
@@ -178,6 +183,11 @@ nav {
     font-size: 1em;
     font-weight: 300;
     text-transform: uppercase;
+
+    font-size: x-large;
+
+    /*font: 52px 'Amatic SC', cursive;*/
+
 
 }
 #current .weatherIcon {
@@ -189,10 +199,23 @@ nav {
     font-size: 3em;
     line-height: 1.3;
 }
-.temp:after {
+
+.tempRange{
+    font-size: smaller;
+}
+
+.hidden{
+display: hide;
+}
+#loader{
+    width:50%;
+}
+
+.degree-sign-c:after{
     content: '\00b0 \001D9C';
     margin-right: -0.3em;
 }
+
 #current .conditions {
     font-size: 1.2em;
     text-transform: uppercase;
@@ -212,6 +235,11 @@ nav {
     margin-left: 10%;
 }
 
+#future .conditions{
+    /*width: min-content;*/
+    font-size: smaller;
+}
+
 #future .container2 {
     float: right;
     margin-right: 10%;
@@ -219,7 +247,7 @@ nav {
 
 .vl {
     float: left;
-    margin-left: 18%;
+    margin-left: 15%;
     margin-top: 5%;
     border-left: 2px solid white;
     height: 50%;
