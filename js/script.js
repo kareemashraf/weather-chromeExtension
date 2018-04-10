@@ -18,12 +18,17 @@ function init(){
 	    		console.log('loading data!');
 	    	}
     	}, 2000);
+
+	if (!getdata()) { 
+		init(); 
+		console.log('try again!');
+	}
 }
 
 function getdata(){
 	var xhr = new XMLHttpRequest();
 
-		xhr.open("GET", "http://ip-api.com/json", false);
+		xhr.open("GET", "https://ipapi.co/json", false);  //http://ip-api.com/json
 		xhr.send();
 		
 		return JSON.parse(xhr.response); //city details

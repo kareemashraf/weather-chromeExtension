@@ -172,9 +172,10 @@ nav {
     /*margin-top: 10%;*/
 }
 .location {
-    color: black;
+
     /*font: 52px 'Amatic SC', cursive;*/
-    text-shadow: rgb(204, 204, 204) 0px 1px 0px, rgb(201, 201, 201) 0px 2px 0px, rgb(187, 187, 187) 0px 3px 0px, rgb(185, 185, 185) 0px 4px 0px, rgb(170, 170, 170) 0px 5px 0px, rgba(0, 0, 0, 0.098) 0px 6px 1px, rgba(0, 0, 0, 0.098) 0px 0px 5px, rgba(0, 0, 0, 0.298) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 3px 5px, rgba(0, 0, 0, 0.247) 0px 5px 10px, rgba(0, 0, 0, 0.2) 0px 10px 10px, rgba(0, 0, 0, 0.15) 0px 20px 20px;
+    /*text-shadow: rgb(204, 204, 204) 0px 1px 0px, rgb(201, 201, 201) 0px 2px 0px, rgb(187, 187, 187) 0px 3px 0px, rgb(185, 185, 185) 0px 4px 0px, rgb(170, 170, 170) 0px 5px 0px, rgba(0, 0, 0, 0.098) 0px 6px 1px, rgba(0, 0, 0, 0.098) 0px 0px 5px, rgba(0, 0, 0, 0.298) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 3px 5px, rgba(0, 0, 0, 0.247) 0px 5px 10px, rgba(0, 0, 0, 0.2) 0px 10px 10px, rgba(0, 0, 0, 0.15) 0px 20px 20px;*/
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 55px #000000, 0 0 75px #000000;
 }
 #toggle{
     float: left;
@@ -186,6 +187,10 @@ nav {
 
     font-size: x-large;
 
+
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 55px #000000, 0 0 75px #000000;
+    text-align: center;
     /*font: 52px 'Amatic SC', cursive;*/
 
 
@@ -225,7 +230,7 @@ display: hide;
     Future Forecast
 -----------------*/
 #future {
-    height: 200px;
+    height: auto;
     margin: auto;
     /*padding: 10px;*/
 }
@@ -250,7 +255,8 @@ display: hide;
     margin-left: 15%;
     margin-top: 5%;
     border-left: 2px solid white;
-    height: 50%;
+    height: 90px;
+    margin-bottom: 30px;
 }
 
 #img{
@@ -288,7 +294,9 @@ display: hide;
 .donate{
     float: left;
     margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 12%;
+    color: white;
+    margin-bottom: 2%;
 }
 
 
