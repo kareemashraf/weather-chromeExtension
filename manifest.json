@@ -1,5 +1,5 @@
 {
-    "name": "WeatherChrome",
+    "name": "CoolForeCast",
     "version": "1.0",
     "manifest_version": 2,
     "description": "Temperature statistics in your current area.",
@@ -10,5 +10,5 @@
     "icons": { 
         "16": "img/icon16.png",
         "48": "img/icon48.png",
-        "128": "img/icon128.png" },
+        "128": "img/icon128.png" }
 }
