@@ -17,7 +17,7 @@ function init(){
 	    		init();
 	    		console.log('loading data!');
 	    	}
-    	}, 2000);
+    	}, 500);
 
 	if (!getdata()) { 
 		init(); 
@@ -28,18 +28,24 @@ function init(){
 function getdata(){
 	var xhr = new XMLHttpRequest();
 
-		xhr.open("GET", "https://ipapi.co/json", false);  //http://ip-api.com/json
+		xhr.open("GET", "https://ipapi.co/json", false);  //http://ip-api.com/json | https://ipapi.co/json
 		xhr.send();
 		
 		return JSON.parse(xhr.response); //city details
 
 }
 
-function getApi(){ console.log('here');
+function getApi(){ 
+
 	var xhr = new XMLHttpRequest();
 		var query = "https://query.yahooapis.com/v1/public/yql?q=";
 		var unite = 'c';
-		var uri = query+"select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+getdata().city+"')and u='"+unite+"' &format=json ";
+		var city = getdata().city;
+		if (city =='hong kong') { 
+			city ='hong%2520kong'
+		}
+
+		var uri = query+"select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+city+"')and u='"+unite+"' &format=json ";
 console.log(uri);
 		xhr.open("GET", uri, false);
 		xhr.send();
